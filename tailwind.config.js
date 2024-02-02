@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         amazonclone: {
-          background: "EAEDED",
+          background: "#EAEDED",
           light_blue: "#232F3A",
           yellow: "#FEBD69",
           DEFAULT: "#131921",

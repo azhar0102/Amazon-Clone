@@ -1,14 +1,16 @@
 import React from "react";
 import { data } from "../data/data";
-data;
+import banner from "../assets/images/banner_image_2.jpg";
 
 const HomePageCard = () => {
   return (
-    <div className="grid grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-3 xl:grid-cols-4 -mt-80">
       {data.map((item) => (
-        <>
-          <div key={item.id} className="h-[450px] bg-white">
-            <div className="text-lg xl:text-xl font-semibold">{item.title}</div>
+        <React.Fragment key={item.id}>
+          <div className="h-[420px] bg-white z-30 m-3">
+            <div className="text-lg xl:text-xl font-semibold ml-4">
+              {item.title}
+            </div>
             <div className="h-[300px] m-4">
               <img
                 className="h-[100%] w-[100%] object-cover "
@@ -20,8 +22,11 @@ const HomePageCard = () => {
               {item.link}
             </div>
           </div>
-        </>
+        </React.Fragment>
       ))}
+      <div className="m-3 pt-8">
+        <img className="xl:hidden" src={banner} alt="banner-img" />
+      </div>
     </div>
   );
 };
