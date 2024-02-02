@@ -15,23 +15,26 @@ const Carousel = () => {
         navigation="true"
       >
         <swiper-slide>
-          <img src="../images/carousel_1.jpg" alt="banner" />
+          <img src="../assets/images/carousel_1.jpg" alt="banner" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../images/carousel_2.jpg" alt="banner" />
+          <img src="../assets/images/carousel_2.jpg" alt="banner" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../images/carousel_3.jpg" alt="banner" />
+          <img src="../assets/images/carousel_3.jpg" alt="banner" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../images/carousel_4.jpg" alt="banner" />
+          <img src="../assets/images/carousel_4.jpg" alt="banner" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../images/carousel_5.jpg" alt="banner" />
+          <img src="../assets/images/carousel_5.jpg" alt="banner" />
         </swiper-slide>
         <swiper-slide>
           <video controls muted="muted">
-            <source src={"../images/carousel_vid.mp4"} type="video/mp4" />{" "}
+            <source
+              src={"../assets/images/carousel_vid.mp4"}
+              type="video/mp4"
+            />{" "}
           </video>
         </swiper-slide>
       </swiper-container>
