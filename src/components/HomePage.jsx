@@ -4,11 +4,12 @@ import HomePageCard from "./HomePageCard";
 import CarouselCategory from "./CarouselCategory";
 import CarouselProduct from "./CarouselProduct";
 import banner from "../assets/images/banner_image.jpg";
+import NavBar from "./NavBar";
 
 const HomePage = () => {
   return (
-    <div className="bg-amazonclone-light_blue">
-      HomePage
+    <div className="bg-amazonclone-background">
+      <NavBar />
       <Carousel />
       <HomePageCard />
       <CarouselProduct />
