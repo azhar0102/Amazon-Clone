@@ -9,7 +9,6 @@ import NavBar from "./NavBar";
 const HomePage = () => {
   return (
     <div className="bg-amazonclone-background">
-      <NavBar />
       <Carousel />
       <HomePageCard />
       <CarouselProduct />

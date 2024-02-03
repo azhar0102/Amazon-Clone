@@ -8,6 +8,7 @@ import product_6 from "../assets/images/product_6_small.jpg";
 import product_7 from "../assets/images/product_7_small.jpg";
 import product_8 from "../assets/images/product_8_small.jpg";
 import product_9 from "../assets/images/product_9_small.jpg";
+import { Link } from "react-router-dom";
 
 const CarouselProduct = () => {
   return (
@@ -21,7 +22,9 @@ const CarouselProduct = () => {
       >
         {Array.from({ length: 9 }, (_, i) => (
           <swiper-slide key={i}>
-            <img src={eval(`product_${i}`)} alt="Product_category" />
+            <Link to={`/product_${i}`}>
+              <img src={eval(`product_${i}`)} alt="Product_category" />
+            </Link>
           </swiper-slide>
         ))}
       </swiper-container>
