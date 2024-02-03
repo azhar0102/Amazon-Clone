@@ -14,7 +14,7 @@ const CarouselCategory = () => {
         space-between="100"
         navigation="true"
         slides-per-view="4"
-        loop="true"
+        // loop="true"
       >
         <swiper-slide>
           <img src={category1} alt="category" />
