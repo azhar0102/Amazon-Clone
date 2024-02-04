@@ -22,7 +22,7 @@ const CarouselProduct = () => {
       >
         {Array.from({ length: 9 }, (_, i) => (
           <swiper-slide key={i}>
-            <Link to={`/product_${i}`}>
+            <Link to={`/product/${i}`}>
               <img src={eval(`product_${i}`)} alt="Product_category" />
             </Link>
           </swiper-slide>
