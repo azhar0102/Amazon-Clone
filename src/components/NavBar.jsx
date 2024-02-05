@@ -1,5 +1,6 @@
 import amazon from "../assets/images/amazon.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 import Search from "./Search";
 
 const NavBar = () => {
@@ -8,11 +9,13 @@ const NavBar = () => {
       <div className="flex bg-amazonclone text-white h-[60px]">
         {/* left */}
         <div className="flex items-center m-4">
-          <img
-            className="h-[35px] w-[100px] m-2"
-            src={amazon}
-            alt="amazon-logo"
-          />
+          <Link to={"/"}>
+            <img
+              className="h-[35px] w-[100px] m-2"
+              src={amazon}
+              alt="amazon-logo"
+            />
+          </Link>
           <div className="px-4">
             <div className="text-xs lg:text-sm">Deliver to</div>
             <div className="text-sm lg:text-base font-bold">India</div>
@@ -34,10 +37,12 @@ const NavBar = () => {
             <div className="text-xs lg:text-sm">Returns</div>
             <div className="text-sm lg:text-base font-bold">& Orders</div>
           </div>
-          <div className="flex px-3">
-            <ShoppingCartIcon className="h-[48px]" />
-            <div className="mt-7 text-xs lg:text-sm font-bold">Cart</div>
-          </div>
+          <Link to={"/checkout"}>
+            <div className="flex px-3">
+              <ShoppingCartIcon className="h-[48px]" />
+              <div className="mt-7 text-xs lg:text-sm font-bold">Cart</div>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="flex bg-amazonclone-light_blue text-white space-x-3 text-xs lg:text-sm p-2 pl-6">
