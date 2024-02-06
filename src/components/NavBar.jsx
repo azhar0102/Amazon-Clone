@@ -2,8 +2,11 @@ import amazon from "../assets/images/amazon.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const cart = useSelector((state) => state.cart.productNumber);
+
   return (
     <>
       <div className="flex bg-amazonclone text-white h-[60px]">
@@ -40,6 +43,11 @@ const NavBar = () => {
           <Link to={"/checkout"}>
             <div className="flex px-3">
               <ShoppingCartIcon className="h-[48px]" />
+              <div className="relative">
+                <div className="absolute right-[9px] m-2 font-bold text-orange-400">
+                  {cart}
+                </div>
+              </div>
               <div className="mt-7 text-xs lg:text-sm font-bold">Cart</div>
             </div>
           </Link>

@@ -9,7 +9,7 @@ const Search = () => {
   const [category, setCategory] = useState("All");
   const navigate = useNavigate();
 
-  const onHadleSubmit = (e) => {
+  const onHandleSubmit = (e) => {
     e.preventDefault();
     navigate({
       pathname: "search",
@@ -56,7 +56,7 @@ const Search = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="w-[45px]" onClick={onHadleSubmit}>
+        <button className="w-[45px]" onClick={onHandleSubmit}>
           <MagnifyingGlassIcon className="h-[27px] m-auto stroke-slate-900" />
         </button>
       </div>

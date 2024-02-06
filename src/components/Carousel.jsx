@@ -1,5 +1,6 @@
 import { register } from "swiper/element/bundle";
 register();
+
 import carousel_vid from "../assets/images/carousel_vid.mp4";
 import carousel_1 from "../assets/images/carousel_1.jpg";
 import carousel_2 from "../assets/images/carousel_2.jpg";
@@ -12,11 +13,8 @@ const Carousel = () => {
     <div className="h-[600px] bg-white">
       <swiper-container
         class="swiper-container"
-        autoplay={{
-          delay: 1000,
-        }}
-        // data-swiper-autoplay="2000"
-        loop="true"
+        loop={true}
+        autoplay={{ delay: 5000 }}
         navigation="true"
       >
         <swiper-slide>
