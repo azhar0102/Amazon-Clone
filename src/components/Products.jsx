@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { callAPI } from "../utils/CallApi";
 import ProductDetails from "./ProductDetails";
+import { addToCart } from "../redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const Products = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState("1");
 
   const getProduct = () => {
     callAPI(`data/products.json`).then((productResults) => {
       setProduct(productResults[id]);
-      console.log(productResults[id]);
+      // console.log(productResults[id]);
     });
   };
+
+  const addQuantityToProduct = () => {
+    setProduct((product.quantity = quantity));
+    return product;
+  };
+
   useEffect(() => {
     getProduct();
   }, []);
@@ -56,15 +66,23 @@ const Products = () => {
               </div>
               <div className="text-base lg:text-lg mt-1">
                 Quantity:
-                <select className="p-0 bg-white border rounded-md focus:border-indigo-600">
+                <select
+                  onChange={(e) => setQuantity(e.target.value)}
+                  className="p-0 bg-white border rounded-md focus:border-indigo-600"
+                >
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                 </select>
               </div>
-              <button className="bg-yellow-400 w-full p-3 text-xs lg:text-sm hover:bg-yellow-500 mt-3 rounded">
-                Add to Cart
-              </button>
+              <Link to={"/checkout"}>
+                <button
+                  onClick={() => dispatch(addToCart(addQuantityToProduct()))}
+                  className="bg-yellow-400 w-full p-3 text-xs lg:text-sm hover:bg-yellow-500 mt-3 rounded"
+                >
+                  Add to Cart
+                </button>
+              </Link>
             </div>
           </div>
         </div>
