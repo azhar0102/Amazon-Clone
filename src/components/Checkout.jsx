@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
-import { removeFromCart } from "../redux/cartSlice";
+import { removeFromCart, increase, decrease } from "../redux/cartSlice";
 
 const Checkout = () => {
   const products = useSelector((state) => state.cart.products);
@@ -49,15 +49,21 @@ const Checkout = () => {
                         </button>
                       </div>
                       <div className="grid grid-cols-3 w-20 text-center">
-                        <div className="text-xl lg:text-2xl bg-gray-400 rounded">
+                        <button
+                          className="text-xl lg:text-2xl bg-gray-400 rounded"
+                          onClick={() => dispatch(decrease(product.id))}
+                        >
                           -
-                        </div>
+                        </button>
                         <div className="text-xl lg:text-2xl bg-gray-200 ">
                           {product.quantity}
                         </div>
-                        <div className="text-xl lg:text-2xl bg-gray-400 rounded">
+                        <button
+                          className="text-xl lg:text-2xl bg-gray-400 rounded"
+                          onClick={() => dispatch(increase(product.id))}
+                        >
                           +
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
