@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
       // check if product is in array.
       const addProductExists = state.products.find(
         (product) => product.id === action.payload.id
-      ); //.id
+      );
       if (addProductExists) {
         addProductExists.quantity += parseInt(action.payload.quantity);
       } else {
@@ -20,11 +20,18 @@ export const cartSlice = createSlice({
           ...action.payload,
           quantity: parseInt(action.payload.quantity),
         });
-        console.log(action.payload.quantity);
       }
       state.productNumber += parseInt(action.payload.quantity);
     },
-    removeFromCart: (state, action) => {},
+    removeFromCart: (state, action) => {
+      const productToRemove = state.products.find(
+        (product) => product.id === action.payload
+      );
+      state.productNumber -= productToRemove.quantity;
+      state.products = state.products.filter(
+        (item) => item.id !== action.payload
+      );
+    },
   },
 });
 

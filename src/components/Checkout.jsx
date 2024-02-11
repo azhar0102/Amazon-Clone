@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
+import { removeFromCart } from "../redux/cartSlice";
 
 const Checkout = () => {
   const products = useSelector((state) => state.cart.products);
@@ -11,7 +12,8 @@ const Checkout = () => {
       0
     )
   );
-  console.log(products);
+  const dispatch = useDispatch();
+
   return (
     <div className="h-screen bg-amazonclone-background m-auto p-8">
       <div className="grid grid-cols-8 gap-10 ">
@@ -39,7 +41,12 @@ const Checkout = () => {
                         </Link>
                       </div>
                       <div>
-                        <button>Delete</button>
+                        <button
+                          className="text-sm lg:text-base font-semibold rounded text-red-500 my-2"
+                          onClick={() => dispatch(removeFromCart(product.id))}
+                        >
+                          Delete
+                        </button>
                       </div>
                       <div className="grid grid-cols-3 w-20 text-center">
                         <div className="text-xl lg:text-2xl bg-gray-400 rounded">

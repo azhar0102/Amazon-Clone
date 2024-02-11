@@ -14,7 +14,6 @@ const Products = () => {
   const getProduct = () => {
     callAPI(`data/products.json`).then((productResults) => {
       setProduct(productResults[id]);
-      console.log(productResults[id]);
     });
   };
 
