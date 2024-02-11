@@ -20,6 +20,7 @@ export const cartSlice = createSlice({
           ...action.payload,
           quantity: parseInt(action.payload.quantity),
         });
+        console.log(action.payload.quantity);
       }
       state.productNumber += parseInt(action.payload.quantity);
     },

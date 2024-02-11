@@ -14,13 +14,13 @@ const Products = () => {
   const getProduct = () => {
     callAPI(`data/products.json`).then((productResults) => {
       setProduct(productResults[id]);
-      // console.log(productResults[id]);
+      console.log(productResults[id]);
     });
   };
 
   const addQuantityToProduct = () => {
     setProduct((product.quantity = quantity));
-    return product;
+    return product; // return product
   };
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Products = () => {
               <Link to={"/checkout"}>
                 <button
                   onClick={() => dispatch(addToCart(addQuantityToProduct()))}
-                  className="bg-yellow-400 w-full p-3 text-xs lg:text-sm hover:bg-yellow-500 mt-3 rounded"
+                  className="btn"
                 >
                   Add to Cart
                 </button>

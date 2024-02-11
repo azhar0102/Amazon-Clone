@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn {
+    @apply bg-yellow-400 w-full p-3 text-xs lg:text-sm hover:bg-yellow-500 mt-3 rounded;
+  }
+}
 .swiper-container {
   height: 310px;
   background-color: black;
