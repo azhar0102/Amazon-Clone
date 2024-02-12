@@ -35,9 +35,9 @@ export const cartSlice = createSlice({
     increase: (state, action) => {
       const itemInc = state.products.find((item) => item.id === action.payload);
       if (itemInc.quantity >= 1) {
-        itemInc.quantity = itemInc.quantity + 1;
+        itemInc.quantity += 1;
       }
-      state.productNumber = state.productNumber + 1;
+      state.productNumber += 1;
     },
     decrease: (state, action) => {
       const itemDec = state.products.find((item) => item.id === action.payload);
@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
       } else {
         itemDec.quantity--;
       }
-      state.productNumber = state.productNumber - 1;
+      state.productNumber -= 1;
     },
   },
 });

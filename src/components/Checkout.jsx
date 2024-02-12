@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import { removeFromCart, increase, decrease } from "../redux/cartSlice";
 
@@ -26,19 +25,15 @@ const Checkout = () => {
                 <div className="grid grid-cols-12 divide-y divide-gray-400 mr-4">
                   <div className="col-span-10 grid grid-cols-8 divide-y divide-gray-400">
                     <div className="col-span-2">
-                      <Link to={`/products/${product.id}`}>
-                        <img
-                          className="p-4 m-auto"
-                          src={product.image_small}
-                          alt="product-image"
-                        />
-                      </Link>
+                      <img
+                        className="p-4 m-auto"
+                        src={product.image_small}
+                        alt="product-image"
+                      />
                     </div>
                     <div className="col-span-6">
                       <div className="font-medium text-black mt-2">
-                        <Link to={`/products/${product.id}`}>
-                          <ProductDetails product={product} ratings={false} />
-                        </Link>
+                        <ProductDetails product={product} ratings={false} />
                       </div>
                       <div>
                         <button
