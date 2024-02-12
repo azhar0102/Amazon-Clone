@@ -7,10 +7,20 @@ import product_5 from "../assets/images/product_5_small.jpg";
 import product_6 from "../assets/images/product_6_small.jpg";
 import product_7 from "../assets/images/product_7_small.jpg";
 import product_8 from "../assets/images/product_8_small.jpg";
-import product_9 from "../assets/images/product_9_small.jpg";
 import { Link } from "react-router-dom";
 
 const CarouselProduct = () => {
+  const productList = [
+    product_0,
+    product_1,
+    product_2,
+    product_3,
+    product_4,
+    product_5,
+    product_6,
+    product_7,
+    product_8,
+  ];
   return (
     <div className="bg-white m-3">
       <div className="text-2xl font-semibold p-3">Best Sellers</div>
@@ -18,14 +28,13 @@ const CarouselProduct = () => {
         space-between="10"
         navigation="true"
         slides-per-view="7"
-        // loop="true"
       >
-        {Array.from({ length: 9 }, (_, i) => (
-          <swiper-slide key={i}>
-            <Link to={`/product/${i}`}>
-              <img src={eval(`product_${i}`)} alt="Product_category" />
+        {productList.map((product, index) => (
+          <div className="swiper-slide" key={index}>
+            <Link to={`/product/${index}`}>
+              <img src={product} alt="Product_category" />
             </Link>
-          </swiper-slide>
+          </div>
         ))}
       </swiper-container>
     </div>
